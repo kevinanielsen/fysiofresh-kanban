@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import draggable from "vuedraggable";
+import Task from "./Task.vue";
 
 const data = ref({
   todo: [
@@ -23,7 +24,7 @@ const h3Styles = {
       <h3 v-bind="h3Styles">To Do</h3>
       <draggable :list="data.todo" itemKey="title" group="tasks">
         <template #item="{ element }">
-          <div class="">{{ element.title }}</div>
+          <Task :title="element.title" :description="element.description" />
         </template>
       </draggable>
     </div>
@@ -31,7 +32,7 @@ const h3Styles = {
       <h3 v-bind="h3Styles">Doing</h3>
       <draggable :list="data.doing" itemKey="title" group="tasks">
         <template #item="{ element }">
-          <div class="">{{ element.title }}</div>
+          <Task :title="element.title" :description="element.description" />
         </template>
       </draggable>
     </div>
@@ -39,7 +40,7 @@ const h3Styles = {
       <h3 v-bind="h3Styles">Done</h3>
       <draggable :list="data.done" itemKey="title" group="tasks">
         <template #item="{ element }">
-          <div class="">{{ element.title }}</div>
+          <Task :title="element.title" :description="element.description" />
         </template>
       </draggable>
     </div>
