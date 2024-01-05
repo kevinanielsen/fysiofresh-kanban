@@ -6,7 +6,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="p-2 shadow-lg border rounded-[16px]">
+  <div class="p-2 shadow-lg border rounded-[4px]">
     <h4>{{ title }}</h4>
     <p>{{ description }}</p>
   </div>

@@ -14,7 +14,7 @@ const data = ref({
   done: [],
 });
 const h3Styles = {
-  class: "bg-[#603F3E] text-white p-2 rounded-[16px] mb-2 font-bold text-lg",
+  class: "bg-[#603F3E] text-white p-2 rounded-[4px] mb-2 font-bold text-lg",
 };
 </script>
 
