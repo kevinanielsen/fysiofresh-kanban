@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Board from "./components/Board.vue";
+</script>
 
 <template>
   <div class="w-full h-full flex flex-col items-center p-4">
