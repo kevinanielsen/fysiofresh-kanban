@@ -7,12 +7,22 @@ import CreateTask from "./CreateTask.vue";
 const data = ref({
   todo: [
     {
-      title: "Task",
-      description: "This is a short task",
+      title: "Opgave, der skal gøres",
+      description: "Dette er en opgave som skal færdiggøres",
     },
   ],
-  doing: [],
-  done: [],
+  doing: [
+    {
+      title: "Opgave, der bliver lavet",
+      description: "Denne opgave er i gang med at blive klaret",
+    },
+  ],
+  done: [
+    {
+      title: "Denne opgave er færdig",
+      description: "Opgaven er klaret - du kan slappe af!",
+    },
+  ],
 });
 
 const addTask = (
