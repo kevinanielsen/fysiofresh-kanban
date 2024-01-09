@@ -7,18 +7,21 @@ import CreateTask from "./CreateTask.vue";
 const data = ref({
   todo: [
     {
+      id: 1,
       title: "Opgave, der skal gøres",
       description: "Dette er en opgave som skal færdiggøres",
     },
   ],
   doing: [
     {
+      id: 2,
       title: "Opgave, der bliver lavet",
       description: "Denne opgave er i gang med at blive klaret",
     },
   ],
   done: [
     {
+      id: 3,
       title: "Denne opgave er færdig",
       description: "Opgaven er klaret - du kan slappe af!",
     },
@@ -27,7 +30,7 @@ const data = ref({
 
 const addTask = (
   e: SubmitEvent,
-  task: { title: string; description: string }
+  task: { title: string; description: string },
 ) => {
   e.preventDefault();
   data.value.todo.push(task);
@@ -44,23 +47,37 @@ const h3Styles = {
     <div class="flex gap-4 w-full">
       <div id="todo" class="w-1/3 border shadow-inner rounded-lg p-2">
         <h3 v-bind="h3Styles">To Do</h3>
-        <draggable :list="data.todo" itemKey="title" group="tasks">
+        <draggable :list="data.todo" itemKey="id" group="tasks" class="h-full">
           <template #item="{ element }">
-            <Task :title="element.title" :description="element.description" />
+            <Task
+              :title="element.title"
+              :description="element.description"
+              :id="element.id"
+            />
           </template>
         </draggable>
       </div>
       <div id="doing" class="w-1/3 border shadow-inner rounded-lg p-2">
         <h3 v-bind="h3Styles">Doing</h3>
-        <draggable :list="data.doing" itemKey="title" group="tasks">
+        <draggable :list="data.doing" itemKey="id" group="tasks">
           <template #item="{ element }">
-            <Task :title="element.title" :description="element.description" />
+            <Task
+              :title="element.title"
+              :description="element.description"
+              :id="element.id"
+            />
           </template>
         </draggable>
       </div>
       <div id="done" class="w-1/3 border shadow-inner rounded-lg p-2">
         <h3 v-bind="h3Styles">Done</h3>
-        <draggable :list="data.done" itemKey="title" group="tasks">
+        <draggable
+          :list="data.done"
+          itemKey="id"
+          group="tasks"
+          class="h-full"
+          :id="element.id"
+        >
           <template #item="{ element }">
             <Task :title="element.title" :description="element.description" />
           </template>
