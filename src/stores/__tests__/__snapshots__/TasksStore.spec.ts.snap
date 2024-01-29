@@ -1,6 +1,21 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should ensure default state 1`] = `
+exports[`tasksStore > should add a task 1`] = `
+[
+  {
+    "description": "",
+    "id": 0,
+    "title": "Do the dishes",
+  },
+  {
+    "description": "Clean the dishes",
+    "id": 5144,
+    "title": "Do the dishes",
+  },
+]
+`;
+
+exports[`tasksStore > should ensure default state 1`] = `
 [
   {
     "description": "",
@@ -10,6 +25,6 @@ exports[`should ensure default state 1`] = `
 ]
 `;
 
-exports[`should ensure default state 2`] = `[]`;
+exports[`tasksStore > should ensure default state 2`] = `[]`;
 
-exports[`should ensure default state 3`] = `[]`;
+exports[`tasksStore > should ensure default state 3`] = `[]`;
