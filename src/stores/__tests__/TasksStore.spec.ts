@@ -18,9 +18,7 @@ describe("tasksStore", () => {
     //Act - we're testing the constructor, there is no act.
 
     //Assert
-    expect(tasksStore.todo).toMatchSnapshot();
-    expect(tasksStore.doing).toMatchSnapshot();
-    expect(tasksStore.done).toMatchSnapshot();
+    expect(tasksStore).toMatchSnapshot();
   });
   it("should add a task", () => {
     //Given a new store without any changes
