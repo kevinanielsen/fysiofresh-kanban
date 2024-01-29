@@ -1,6 +1,10 @@
-import { it, expect } from "vitest";
+import { it, expect, beforeEach } from "vitest";
 import { useTasksStore } from "../TasksStore";
-import { iTask } from "@/models/task";
+import { createPinia, setActivePinia } from "pinia";
+
+beforeEach(() => {
+  setActivePinia(createPinia());
+})
 
 it('should ensure default state', () => {
   //Given a new store without any changes
@@ -13,5 +17,7 @@ it('should ensure default state', () => {
   //Act - we're testing the constructor, there is no act.
 
   //Assert
-  expect(tasksStore.todo).toStrictEqual([] as iTask[]);
+  expect(tasksStore.todo).toMatchSnapshot();
+  expect(tasksStore.doing).toMatchSnapshot();
+  expect(tasksStore.done).toMatchSnapshot();
 });

@@ -1,0 +1,15 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should ensure default state 1`] = `
+[
+  {
+    "description": "",
+    "id": 0,
+    "title": "Do the dishes",
+  },
+]
+`;
+
+exports[`should ensure default state 2`] = `[]`;
+
+exports[`should ensure default state 3`] = `[]`;
