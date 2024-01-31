@@ -18,7 +18,15 @@ describe("tasksStore", () => {
     //Act - we're testing the constructor, there is no act.
 
     //Assert
-    expect(tasksStore).toMatchSnapshot();
+    expect(tasksStore.todo).toMatchInlineSnapshot(`
+      [
+        {
+          "description": "",
+          "id": 0,
+          "title": "Do the dishes",
+        },
+      ]
+    `);
   });
   it("should add a task", () => {
     //Given a new store without any changes
@@ -32,6 +40,7 @@ describe("tasksStore", () => {
     tasksStore.addTask("Do the dishes", "Clean the dishes");
 
     //Assert
-    expect(tasksStore.todo).toMatchSnapshot();
+    expect(tasksStore.todo[tasksStore.todo.length - 1].description).toMatchInlineSnapshot(`"Clean the dishes"`);
+    expect(tasksStore.todo[tasksStore.todo.length - 1].title).toMatchInlineSnapshot(`"Do the dishes"`);
   });
 })
