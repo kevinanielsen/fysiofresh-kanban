@@ -1,9 +1,16 @@
 <script setup lang="ts">
+import { useTasksStore } from "@/stores/TasksStore";
 import { ref } from "vue";
 
-defineProps({
-  addTask: Function,
-});
+const tasks = useTasksStore();
+
+const addTask = (
+  e: Event,
+  task: { title: string; description: string },
+) => {
+  e.preventDefault();
+  tasks.addTask(task.title, task.description)
+};
 
 const title = ref("");
 const description = ref("");
@@ -14,7 +21,7 @@ const labelClass = "flex flex-col w-1/3 h-full";
 <template>
   <form
     class="bg-[#FFECBE] w-full flex p-4 gap-4 rounded-xl"
-    @submit="(event) => addTask && addTask(event, { title, description })"
+    @submit="(event) => addTask(event, { title, description })"
   >
     <label for="title" v-bind:class="labelClass">
       Title
