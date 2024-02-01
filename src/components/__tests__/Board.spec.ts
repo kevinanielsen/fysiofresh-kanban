@@ -1,4 +1,4 @@
-import BoardVue from "@/components/Board.vue";
+import Board from "@/components/Board.vue";
 import { mount } from "@vue/test-utils";
 import { createPinia, setActivePinia } from "pinia";
 
@@ -11,7 +11,7 @@ describe("Board component", () => {
     //Then the component mounts succesfully
 
     //Arrange & Act
-    const wrapper = mount(BoardVue, {});
+    const wrapper = mount(Board, {});
     //Assert
     expect(wrapper)
   });
