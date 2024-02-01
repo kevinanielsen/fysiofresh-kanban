@@ -41,14 +41,13 @@ const h3Styles = {
       </div>
       <div id="done" class="w-1/3 border shadow-inner rounded-lg p-2">
         <h3 v-bind="h3Styles">Done</h3>
-        <draggable
-          :list="tasks.done"
-          itemKey="id"
-          group="tasks"
-          class="h-full"
-        >
+        <draggable :list="tasks.done" itemKey="id" group="tasks" class="h-full">
           <template #item="{ element }">
-            <Task :title="element.title" :description="element.description" :id="element.id" />
+            <Task
+              :title="element.title"
+              :description="element.description"
+              :id="element.id"
+            />
           </template>
         </draggable>
       </div>

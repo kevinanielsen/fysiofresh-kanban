@@ -4,12 +4,9 @@ import { ref } from "vue";
 
 const tasks = useTasksStore();
 
-const addTask = (
-  e: Event,
-  task: { title: string; description: string },
-) => {
+const addTask = (e: Event, task: { title: string; description: string }) => {
   e.preventDefault();
-  tasks.addTask(task.title, task.description)
+  tasks.addTask(task.title, task.description);
 };
 
 const title = ref("");

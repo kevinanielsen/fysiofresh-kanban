@@ -11,7 +11,7 @@ describe("Task component", () => {
     //Then the component mounts succesfully
 
     //Arrange & Act
-    const wrapper  = shallowMount(TaskVue, {
+    const wrapper = shallowMount(TaskVue, {
       props: {
         id: 0,
         title: "Do the dishes",
@@ -33,7 +33,7 @@ describe("Task component", () => {
     //Then the component mounts succesfully
 
     //Arrange & Act
-    const wrapper  = shallowMount(TaskVue, {
+    const wrapper = shallowMount(TaskVue, {
       props: {
         id: 0,
         title: "Do the dishes",
@@ -50,7 +50,7 @@ describe("Task component", () => {
     //Then the component mounts succesfully
 
     //Arrange & Act
-    const wrapper  = shallowMount(TaskVue, {
+    const wrapper = shallowMount(TaskVue, {
       props: {
         id: 0,
         title: "Do the dishes",
@@ -58,6 +58,8 @@ describe("Task component", () => {
       },
     });
     //Assert
-    expect(wrapper.find("p").text()).toMatchInlineSnapshot(`"Clean the dishes"`);
+    expect(wrapper.find("p").text()).toMatchInlineSnapshot(
+      `"Clean the dishes"`
+    );
   });
-})
+});

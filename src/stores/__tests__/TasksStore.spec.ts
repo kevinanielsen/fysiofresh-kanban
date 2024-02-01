@@ -4,10 +4,10 @@ import { createPinia, setActivePinia } from "pinia";
 
 beforeEach(() => {
   setActivePinia(createPinia());
-})
+});
 
 describe("tasksStore", () => {
-  it('should ensure default state', () => {
+  it("should ensure default state", () => {
     //Given a new store without any changes
     //When store is created
     //Then the default state is
@@ -40,7 +40,11 @@ describe("tasksStore", () => {
     tasksStore.addTask("Do the dishes", "Clean the dishes");
 
     //Assert
-    expect(tasksStore.todo[tasksStore.todo.length - 1].description).toMatchInlineSnapshot(`"Clean the dishes"`);
-    expect(tasksStore.todo[tasksStore.todo.length - 1].title).toMatchInlineSnapshot(`"Do the dishes"`);
+    expect(
+      tasksStore.todo[tasksStore.todo.length - 1].description
+    ).toMatchInlineSnapshot(`"Clean the dishes"`);
+    expect(
+      tasksStore.todo[tasksStore.todo.length - 1].title
+    ).toMatchInlineSnapshot(`"Do the dishes"`);
   });
-})
+});

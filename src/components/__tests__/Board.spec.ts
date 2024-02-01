@@ -13,6 +13,6 @@ describe("Board component", () => {
     //Arrange & Act
     const wrapper = mount(Board, {});
     //Assert
-    expect(wrapper)
+    expect(wrapper);
   });
 });
