@@ -5,7 +5,7 @@ import { createPinia, setActivePinia } from "pinia";
 setActivePinia(createPinia());
 
 describe("Board component", () => {
-  it("Should mount service display", async () => {
+  it("should mount service display", async () => {
     //Given a ServiceDisplayModal
     //When component is mounted
     //Then the component mounts succesfully
